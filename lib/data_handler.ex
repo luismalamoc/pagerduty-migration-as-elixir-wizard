@@ -1,6 +1,8 @@
+require Logger
+
 defmodule DataHandler do
 
-  @query_limit 5
+  @query_limit 100
 
   def get_all_users() do
     get_all_users_acc(0, [])

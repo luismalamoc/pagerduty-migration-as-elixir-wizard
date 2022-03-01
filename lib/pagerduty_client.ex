@@ -1,3 +1,5 @@
+require Logger
+
 defmodule PagerdutyClient do
   @api_token "y_NbAkKc66ryYTWUXYEu"
   @api_url_base "https://api.pagerduty.com/"

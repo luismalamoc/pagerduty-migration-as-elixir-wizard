@@ -1,3 +1,5 @@
+require Logger
+
 defmodule BaseClient do
   def do_get_request(url, headers) do
     case HTTPoison.get(url, headers) do
