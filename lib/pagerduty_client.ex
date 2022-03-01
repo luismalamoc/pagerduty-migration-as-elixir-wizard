@@ -5,7 +5,9 @@ defmodule PagerdutyClient do
 
   def get_users(offset, limit) do
     url = "#{@api_url_base}users?offset=#{offset}&limit=#{limit}"
-    BaseClient.do_get_request(url, @common_headers)
+    {:ok, response} = BaseClient.do_get_request(url, @common_headers)
+    Logger.info("get_users, offset=#{offset} has_more=#{response["more"]}")
+    {:ok, response}
   end
 
   def get_team(team_id) do
