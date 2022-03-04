@@ -1,6 +1,6 @@
 require Logger
 
-defmodule PagerdutyClient do
+defmodule ApiClient do
   @api_token "y_NbAkKc66ryYTWUXYEu"
   @api_url_base "https://api.pagerduty.com/"
   @common_headers [{"Content-Type", "application/json"}, {"Authorization", "Token token=#{@api_token}"}]

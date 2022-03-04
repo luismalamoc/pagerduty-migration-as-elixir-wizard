@@ -1,32 +1,30 @@
-# pagerduty-migration-as-elixir-wizard
+# handling-data-as-elixir-wizard
 
-Pagerduty api example test, an implementation of data migration of a customer because new laws regulations at their country needed.
-It was built with Elixir language programming, because I'm trying to become in an Elixir Wizard |D
+Handle the data from a API example with Elixir language programming, because I'm trying to become in an Elixir Wizard |D
 
 ## Getting Started
 
-Pagerduty endpoints used
+Example API endpoints used
 
 - https://developer.pagerduty.com/api-reference/b3A6Mjc0ODIzMw-list-users
 - https://developer.pagerduty.com/api-reference/b3A6Mjc0ODIyNA-get-a-team
-- https://developer.pagerduty.com/api-reference/b3A6Mjc0ODI0MQ-get-a-user-s-contact-method
 
 ## Instructions
 
-### Update your Pagerduty API token at pargerduty_client.ex
+### Set the API token at api_client.ex
 ```
 @api_token = "YOUR_TOKEN"
 ```
 
-### Run at console, it will dump a file named sample_data_collected.json
+### Run at console, it will show the results of transformations done
 
 ```
 iex -S mix
-TheMigrationProject.main
+HandlingDataAsElixirWizard.main
 
 // or
 
-mix run lib/the_migration_project.ex
+mix run lib/HandlingDataAsElixirWizard.ex
 ```
 
 ## License
