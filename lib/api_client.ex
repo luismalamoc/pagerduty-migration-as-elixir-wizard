@@ -14,6 +14,7 @@ defmodule ApiClient do
 
   def get_team(team_id) do
     url = "#{@api_url_base}teams/#{team_id}"
+    Logger.info("get_team, team_id=#{team_id}")
     BaseClient.do_get_request(url, @common_headers)
   end
 

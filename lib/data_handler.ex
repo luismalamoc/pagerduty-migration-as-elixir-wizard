@@ -20,27 +20,28 @@ defmodule DataHandler do
   end
 
   defp get_all_teams(user) do
-    user["teams"]
-    |> Enum.each(&get_team/1)
+    result = for team <- user["teams"], do: get_team team
   end
 
   defp get_team(team) do
-    case ApiClient.get_team(team["id"]) do
-      {:ok, response} -> response
+    with {:ok, response} <- ApiClient.get_team(team["id"]) do
+      response
+    else
       {:error, error} -> Logger.error("get_team, error=#{error}")
     end
   end
 
-  def do_transformations() do
-    DataHandler.get_all_users()
-    |> Enum.each(fn({user}) ->
-      teams = get_all_teams(user)
-      %{
-        id: user["id"],
-        teams: teams
-      }
-    end)
+  defp get_users_s_teams(user) do
+    teams = get_all_teams(user)
+    %{
+      id: user["id"],
+      teams: teams
+    }
+  end
 
+
+  def do_transformations() do
+    for user <- DataHandler.get_all_users(), do: get_users_s_teams user
   end
 end
 
