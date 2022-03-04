@@ -19,22 +19,6 @@ defmodule DataHandler do
     end
   end
 
-  def get_all_teams_of_user(users_list, accumulative_list) do
-    get_all_teams_of_user_acc(users_list, [])
-  end
-
-  defp get_all_teams_of_user_acc(users_list, accumulative_list) do
-    Enum.each(users_list, fn user -> (accumulative_list ++ get_all_teams(user["teams"])) end)
-  end
-
-  def get_all_teams(teams_list) do
-    get_all_teams_acc(teams_list, [])
-  end
-
-  defp get_all_teams_acc(teams_list, accumulative_list) do
-    Enum.each(teams_list, fn team -> (accumulative_list ++ get_team(team["id"])) end)
-  end
-
   defp get_team(team_id) do
     case ApiClient.get_team(team_id) do
       {:ok, response} -> response

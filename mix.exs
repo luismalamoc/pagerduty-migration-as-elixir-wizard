@@ -1,9 +1,9 @@
-defmodule TheMigrationProject.MixProject do
+defmodule HandlingDataAsElixirWizard.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :the_migration_project,
+      app: :handling_data_as_elixir_wizard,
       version: "0.1.0",
       elixir: "~> 1.13",
       start_permanent: Mix.env() == :prod,
@@ -23,8 +23,6 @@ defmodule TheMigrationProject.MixProject do
     [
       # {:dep_from_hexpm, "~> 0.3.0"},
       # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
-      {:httpoison, "~> 1.8"},
-      {:poison, "~> 5.0"}
     ]
   end
 end
